@@ -48,7 +48,7 @@ public class BetterCSC implements ModMain, Listener {
 
     @Override
     public void load(ClientApi api) {
-        api.chat().printChatMessage(prefix.copy().append(Text.of("загружен, by ", TextFormatting.GOLD, "Serega007", TextFormatting.DARK_GREEN, " & ", TextFormatting.GOLD, "VVHIX", TextFormatting.DARK_GREEN)));
+        api.chat().printChatMessage(prefix.copy().append(Text.of("By ", TextFormatting.GOLD, "Frin", TextFormatting.DARK_GREEN, "", TextFormatting.GOLD, "", TextFormatting.DARK_GREEN)));
         ChatSend.BUS.register(this, chatSend -> {
             if (chatSend.isCommand()) {
                 String msg = chatSend.getMessage().toLowerCase();
@@ -62,7 +62,7 @@ public class BetterCSC implements ModMain, Listener {
                     this.hp = !this.hp;
                 } else if (msg.startsWith("/unloadbcsc")) {
                     chatSend.setCancelled(true);
-                    api.chat().printChatMessage(prefix.copy().append(Text.of("Выгружаем данный мод, пока =(", TextFormatting.WHITE)));
+                    api.chat().printChatMessage(prefix.copy().append(Text.of("Данный мод будет удален!", TextFormatting.WHITE)));
                     unload();
                 } else if (msg.startsWith("/leadertop")) {
                     chatSend.setCancelled(true);
